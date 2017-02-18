@@ -10,10 +10,22 @@
                     <div class="panel-body">
                         <form method="POST" action="{{route('article.store')}}">
                             {{csrf_field()}}
-                            <input required type="text" name="title">
-                            <textarea name="content" id="" cols="30" rows="10"></textarea>
-                            <input type="submit" value="Envoyer">
+                            <p>
+                                <input required type="text" name="title">
+                            </p>
+                            <p>
+                                <textarea name="content" id="" cols="30" rows="10"></textarea>
+                            </p>
+                            <p>
+                                <form action="store" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="image"><br/>
 
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                </form>
+                            </p>
+
+                            <input type="submit" value="Envoyer">
+                        </form>
                         @include('messages.errors')
                     </div>
                 </div>

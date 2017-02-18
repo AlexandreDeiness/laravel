@@ -14,7 +14,9 @@
                                 {{session('success')}}
                             </div>
                         @endif
+
                         @forelse($articles as $article)
+                            <img src="{{asset($user->name)}}" alt="" width="300">
                             <h1>{{ $article->title }}</h1>
                             <p>{{ $article->content }}</p>
                             <a href="{{route('article.show', ['id' => $article->id])}}">

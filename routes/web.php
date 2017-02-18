@@ -25,6 +25,10 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/user', 'UserController@index');
 
+Route::get('/image', 'ImageController@index');
+Route::post('/store', 'ImageController@store');
+Route::get('/showall', 'ImageController@showall');
+Route::get('/show/{id}', 'ImageController@show');
 
 //EXO1
 

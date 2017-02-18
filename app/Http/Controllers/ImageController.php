@@ -50,7 +50,7 @@ class ImageController extends Controller
 
         $user->save();
 
-        return redirect('show');
+        return redirect('articles.index');
     }
 
     /**
@@ -70,7 +70,7 @@ class ImageController extends Controller
     {
         $user = Image::findorfail($id);
 
-        return view('showall', compact('user'));
+        return view('articles.index', compact('user'));
     }
 
     /**
