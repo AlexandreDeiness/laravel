@@ -14,7 +14,9 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $comments = Comment::paginate(5);
+
+        return view('comments.index', ['comments' => $comments]);
     }
 
     /**
@@ -24,7 +26,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        return view('comment.create');
+        return view('comments.create');
     }
 
     /**
@@ -37,21 +39,21 @@ class CommentController extends Controller
     {
 
 
-        $this->validate($request, [
-            'title' => 'required',
-            'content' => 'required'
-        ],
-            [
-                'content.required' => 'Content obligatoire'
-            ]);
-
-        Comment::create([
-            'user_id' => Auth::user()->id,
-            'title' => $request->title,
-            'content' => $request->content
-        ]);
-
-        return redirect()->route('comment.show');
+//        $this->validate($request, [
+//            'title' => 'required',
+//            'content' => 'required'
+//        ],
+//            [
+//                'content.required' => 'Content obligatoire'
+//            ]);
+//
+//        Comment::create([
+//            'user_id' => Auth::user()->id,
+//            'title' => $request->title,
+//            'content' => $request->content
+//        ]);
+//
+//        return redirect()->route('comment.show');
 
     }
 
@@ -63,13 +65,13 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        $comment = Comment::find($id);
-
-        if(!$comment) {
-            return redirect()->route('comment.index');
-        }
-
-        return view('comments.show', compact('comment'));
+//        $comment = Comment::find($id);
+//
+//        if(!$comment) {
+//            return redirect()->route('comment.index');
+//        }
+//
+//        return view('comments.show', compact('comment'));
     }
 
     /**
