@@ -23,7 +23,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/user', 'UserController@index');
+Route::resource('/user', 'UserController');
 
 Route::get('/comment', function(){
     return view('comments.index');

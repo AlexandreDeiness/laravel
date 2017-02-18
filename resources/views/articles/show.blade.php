@@ -27,12 +27,12 @@
                         <a href="{{route('article.index')}}">Retour</a>
 
                         <h1>Commentaires</h1>
-                        @forelse($comments as $comment)
-                            <h1>{{ $comment->title }}</h1>
-                            <p>{{ $comment->content }}</p>
-                        @empty
-                            Aucun commentaire
-                        @endforelse
+                        {{--@forelse($comments as $comment)--}}
+                            {{--<h1>{{ $comment->title }}</h1>--}}
+                            {{--<p>{{ $comment->content }}</p>--}}
+                        {{--@empty--}}
+                            {{--Aucun commentaire--}}
+                        {{--@endforelse--}}
                     </div>
                 </div>
             </div>
