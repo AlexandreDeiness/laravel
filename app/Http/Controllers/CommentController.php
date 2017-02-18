@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -50,7 +51,7 @@ class CommentController extends Controller
             'content' => $request->content
         ]);
 
-        return redirect()->route('article.index');
+        return redirect()->route('comment.show');
 
     }
 
@@ -65,10 +66,10 @@ class CommentController extends Controller
         $comment = Comment::find($id);
 
         if(!$comment) {
-            return redirect()->route('article.index');
+            return redirect()->route('comment.index');
         }
 
-        return view('articles.show', compact('article'));
+        return view('comments.show', compact('comment'));
     }
 
     /**
@@ -82,7 +83,7 @@ class CommentController extends Controller
         $comment = Comment::find($id);
 
         if(!$comment) {
-            return redirect()->route('article.index');
+            return redirect()->route('comment.index');
         }
 
         return view('comments.edit', compact('comment'));
@@ -127,7 +128,7 @@ class CommentController extends Controller
 
         $comment->delete();
 
-        return redirect()->route('article.index')->with('success', 'Commentaire supprimé');
+        return redirect()->route('comment.index')->with('success', 'Commentaire supprimé');
 
     }
 }

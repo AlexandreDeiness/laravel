@@ -8,22 +8,22 @@
                     <div class="panel-heading">Dashboard</div>
 
                     <div class="panel-body">
+
                         @if(session('success'))
                             <div class="alert alert-success">
                                 {{session('success')}}
                             </div>
                         @endif
+                        @forelse($comments as $comment)
+                            <h1>{{ $comment->title }}</h1>
+                            <p>{{ $comment->content }}</p>
 
-                        <h1>{{$comment->title}}</h1>
-                        <p>{{$comment->content}}</p>
-                        <p>
-                            @if($comment->user)
-                                Utilisateur: {{$comment->user->name}}
-                            @else
-                                Pas d'utilisateur
-                            @endif
-                        </p>
-                        <a href="{{route('article.index')}}">Retour</a>
+                        @empty
+                            Rien du tout
+                        @endforelse
+                    </div>
+                    <div class="text-center">
+                        {{$comments->links()}}
                     </div>
                 </div>
             </div>
