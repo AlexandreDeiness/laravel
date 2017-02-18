@@ -29,6 +29,11 @@ Route::get('/comment', function(){
     return view('comments.index');
 });
 
+Route::get('/image', 'ImageController@index');
+Route::post('/store', 'ImageController@store');
+Route::get('/show', 'ImageController@showall');
+Route::get('/show/{id}', 'ImageController@show');
+
 //EXO1
 
 /*Route::get('/iim', function() {

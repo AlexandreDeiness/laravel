@@ -66,6 +66,10 @@
                                     <li>
                                         <a href="{{ route('user.index') }}">Mes articles</a>
                                     </li>
+
+                                    <li>
+                                        <a href="{{ route('article.create') }}">Créer un article</a>
+                                    </li>
                                     
                                     <li>
                                         <a href="{{ route('logout') }}"

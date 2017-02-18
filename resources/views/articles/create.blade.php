@@ -10,8 +10,15 @@
                     <div class="panel-body">
                         <form method="POST" action="{{route('article.store')}}">
                             {{csrf_field()}}
-                            <input required type="text" name="title">
-                            <textarea name="content" id="" cols="30" rows="10"></textarea>
+                            <p>
+                                <input required type="text" name="title">
+                            </p>
+                            <p>
+                                <textarea name="content" id="" cols="30" rows="10"></textarea>
+                            </p>
+                            <br/>
+                            <input type="file">
+                            <br/>
                             <input type="submit" value="Envoyer">
 
                         @include('messages.errors')
