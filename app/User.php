@@ -28,11 +28,19 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the comments for the blog post.
+     * Get the articles for the blog post.
      */
     public function articles()
     {
         return $this->hasMany('App\Article');
+    }
+
+    /**
+     * Get the comments for the blog post.
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
     }
 
     public function test() {

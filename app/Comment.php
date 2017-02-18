@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class Comment extends Model
 {
     /**
      * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    *
+    * @var array
+    */
     protected $fillable = [
         'title', 'content', 'user_id',
     ];
@@ -24,10 +24,10 @@ class Article extends Model
     }
 
     /**
-     * Get the comments for the blog post.
+     * Get the article
      */
-    public function comments()
+    public function article()
     {
-        return $this->hasMany('App\Comment');
+        return $this->belongsTo('App\Article');
     }
 }
