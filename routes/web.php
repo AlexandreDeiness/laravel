@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Admin
+
+Route::get('admin', ['middleware' => 'admin', function(){
+        return Route::resource('/admin', 'AdminController');
+}]);
+
 
 
 Route::resource('/article', 'ArticleController');

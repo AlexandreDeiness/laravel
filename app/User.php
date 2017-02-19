@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -54,4 +55,6 @@ class User extends Authenticatable
     {
         return $this->morphedByMany('App\Post', 'likeable')->whereDeletedAt(null);
     }
+
+
 }
