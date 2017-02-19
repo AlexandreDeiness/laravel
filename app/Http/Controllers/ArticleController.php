@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class ArticleController extends Controller
 {
@@ -56,6 +58,21 @@ class ArticleController extends Controller
 
         return redirect()->route('article.index');
 
+//        $user = new image;
+
+//        $user->title = Input::get('name');
+//        if(Input::hasFile('image')){
+//            $file=Input::file('image');
+//            $file->move(public_path().'/', $file->getClientOriginalName());
+//
+//            $user->name = $file->getClientOriginalName();
+//            $user->size = $file->getClientsize();
+//            $user->type = $file->getClientMimeType();
+//        }
+//
+//        $user->save();
+//
+//        return redirect('articles.index');
     }
 
     /**
@@ -73,6 +90,7 @@ class ArticleController extends Controller
         }
 
         return view('articles.show', compact('article'));
+
     }
 
     /**

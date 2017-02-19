@@ -46,4 +46,12 @@ class User extends Authenticatable
     public function test() {
         return 'hello';
     }
+
+    /*
+     * Like
+     */
+    public function likedPosts()
+    {
+        return $this->morphedByMany('App\Post', 'likeable')->whereDeletedAt(null);
+    }
 }

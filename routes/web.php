@@ -25,14 +25,19 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('/user', 'UserController');
 
+
 Route::get('/comment', function(){
     return view('comments.index');
 });
 
+//images
 Route::get('/image', 'ImageController@index');
 Route::post('/store', 'ImageController@store');
-Route::get('/show', 'ImageController@showall');
+Route::get('/showall', 'ImageController@showall');
 Route::get('/show/{id}', 'ImageController@show');
+
+//like
+Route::get('article/like/{id}', ['as' => 'article.like', 'uses' => 'LikeController@likeArticle']);
 
 //EXO1
 

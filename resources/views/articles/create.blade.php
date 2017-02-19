@@ -16,11 +16,18 @@
                             <p>
                                 <textarea name="content" id="" cols="30" rows="10"></textarea>
                             </p>
-                            <br/>
-                            <input type="file">
-                            <br/>
-                            <input type="submit" value="Envoyer">
 
+                            <p>
+                                <form action="store" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="image"><br/>
+
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+
+                                </form>
+                            </p>
+
+                            <input type="submit" value="Envoyer">
+                        </form>
                         @include('messages.errors')
                     </div>
                 </div>

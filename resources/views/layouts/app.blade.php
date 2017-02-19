@@ -70,7 +70,11 @@
                                     <li>
                                         <a href="{{ route('article.create') }}">Créer un article</a>
                                     </li>
-                                    
+
+                                    <li>
+                                        {{--<a href="{{ route('showall') }}">Voir toutes les images</a>--}}
+                                    </li>
+
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

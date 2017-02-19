@@ -14,9 +14,24 @@
                                 {{session('success')}}
                             </div>
                         @endif
+
                         @forelse($articles as $article)
+                            {{--<img src="{{asset($user->name)}}" alt="" width="300">--}}
                             <h1>{{ $article->title }}</h1>
                             <p>{{ $article->content }}</p>
+
+                            @foreach ($article->likes as $user)
+                                {{ $user->name }} likes this !
+                            @endforeach
+
+                            <p>
+                                @if ($article->isLiked)
+                                    <a href="{{ route('article.like', $article->id) }}">Unlike</a>
+                                @else
+                                    <a href="{{ route('article.like', $article->id) }}">Like</a>
+                                @endif
+                            </p>
+
                             <a href="{{route('article.show', ['id' => $article->id])}}">
                                 Voir mon article
                             </a>
