@@ -15,14 +15,14 @@
                                 @endforeach
                             </ul>
                         @endif
-                        {{--<form method="post" action="{{ route('contact.store') }}">--}}
-                            {{--{{csrf_field()}}--}}
-                            {{--<input type="text" name="title" placeholder="Titre">--}}
-                            {{--<br/>--}}
-                            {{--<textarea name="body" id="" cols="30" rows="10"></textarea>--}}
-                            {{--<br/>--}}
-                            {{--<input type="submit" value="Envoyer">--}}
-                        {{--</form>--}}
+                        <form method="POST" action="{{-- route('contact.store') --}}">
+                            {{csrf_field()}}
+                            <input class="form-control" type="text" name="title" placeholder="Titre">
+                            <br/>
+                            <textarea class="form-control col-md-8" name="body" id="" cols="30" rows="10" placeholder="Contactez nous !"></textarea>
+                            <br/>
+                            <input class="btn btn-success btn-block" type="submit" value="Envoyer">
+                        </form>
                     </div>
                 </div>
             </div>

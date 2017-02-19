@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
+                    <div class="panel-heading">Article n°{{$article->id}}</div>
 
                     <div class="panel-body">
                         @if(session('success'))
@@ -23,6 +23,7 @@
                                 Pas d'utilisateur
                             @endif
                         </p>
+
 
                         <p>
                             <a href="{{route('article.edit', [$article->id])}}">Modifier l'article</a>

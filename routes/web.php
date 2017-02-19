@@ -41,7 +41,7 @@ Route::get('/show/{id}', 'ImageController@show');
 Route::get('article/like/{id}', ['as' => 'article.like', 'uses' => 'LikeController@likeArticle']);
 
 //contact
-Route::get('form-contact', 'ContactController@index');
+Route::get('contact-form', 'ContactController@index');
 
 //EXO1
 
