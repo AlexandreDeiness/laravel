@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 //Admin
 
-Route::get('admin', ['middleware' => 'admin', function(){
-        return Route::resource('/admin', 'AdminController');
-}]);
+//Route::get('admin', ['middleware' => 'admin', function(){
+Route::resource('/admin', 'AdminController');
+
 
 
 
