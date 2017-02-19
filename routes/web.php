@@ -25,10 +25,11 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('/user', 'UserController');
 
-
-Route::get('/comment', function(){
-    return view('comments.index');
-});
+//commentaire
+//Route::get('/comment', function(){
+//    return view('comments.index');
+//});
+Route::post('/article/{article}/comments', 'CommentController@store');
 
 //images
 Route::get('/image', 'ImageController@index');

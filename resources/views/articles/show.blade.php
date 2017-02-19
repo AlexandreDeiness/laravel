@@ -24,9 +24,48 @@
                             @endif
                         </p>
 
-                        <a href="{{route('article.index')}}">Retour</a>
+                        <p>
+                            <a href="{{route('article.edit', [$article->id])}}">Modifier l'article</a>
+                        </p>
+
+                        <p>
+                            <a href="{{route('article.index')}}">Retour</a>
+                        </p>
 
                         <h1>Commentaires</h1>
+                            <div class="comments">
+                                <ul class="list-group">
+                                    @foreach($article->comments as $comment)
+                                        <li class=""list-group-item>
+                                            <strong>
+                                                {{ $comment->created_at->diffForHumans() }}: &nbsp;
+                                            </strong>
+                                            {{ $comment->body }}
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <hr/>
+
+                            <div class="card">
+                                <div class="card-block">
+
+                                    {{ method_field('PATCH') }}
+
+                                    <form method="POST" action="/article/{{$article->id}}/comments">
+
+                                        {{ csrf_field() }}
+                                        <div class="form-group">
+                                            <textarea name="body" placeholder="Écrivez votre commentaire" class="form-control" id="" cols="30" rows="10"></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Ajouter un commentaire</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
                         {{--@forelse($comments as $comment)--}}
                             {{--<h1>{{ $comment->title }}</h1>--}}
                             {{--<p>{{ $comment->content }}</p>--}}

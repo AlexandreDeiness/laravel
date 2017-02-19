@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Comment;
 use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

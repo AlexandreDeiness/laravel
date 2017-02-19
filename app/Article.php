@@ -45,4 +45,15 @@ class Article extends Model
         $like = $this->likes()->whereUserId(Auth::id())->first();
         return (!is_null($like)) ? true : false;
     }
+
+    public function addComment($body)
+    {
+        $this->comments()->create(compact('body'));
+//        Comment::create([
+//            'body' => $body,
+//            'article _id' => $this->id
+//        ]);
+
+        return back();
+    }
 }

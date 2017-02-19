@@ -23,10 +23,11 @@
 
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
 
+                                    <input type="submit" value="Envoyer">
                                 </form>
                             </p>
 
-                            <input type="submit" value="Envoyer">
+
                         </form>
                         @include('messages.errors')
                     </div>

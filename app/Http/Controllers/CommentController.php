@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Comment;
 use Illuminate\Http\Request;
 
@@ -35,9 +36,9 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Article $article)
     {
-
+        $article->addComment(request('body'));
 
 //        $this->validate($request, [
 //            'title' => 'required',
