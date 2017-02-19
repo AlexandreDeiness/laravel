@@ -12,9 +12,18 @@ class Admin extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'content', 'user_id', 'user'
+        'title', 'content', 'user_id', 'user', 'role'
     ];
 
+    public function Admin()
+    {
+        if ($role='admin')
+        {
+            return true;
+        }  else
+        {return false;
+        }
+    }
     /**
      * Get the user
      */

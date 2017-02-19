@@ -16,10 +16,12 @@ Route::get('/', function () {
 });
 
 //Admin
-Route::resource('/admin', 'AdminController');
-//Route::get('/admin', ['middleware' => ['paul'], function () {
-    //
-//}]);
+
+Route::get('admin', ['middleware' => 'admin', function(){
+        return Route::resource('/admin', 'AdminController');
+}]);
+
+
 
 Route::resource('/article', 'ArticleController');
 
