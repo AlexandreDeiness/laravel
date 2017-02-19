@@ -58,21 +58,21 @@ class ArticleController extends Controller
 
         return redirect()->route('article.index');
 
-//        $user = new image;
+        $user = new image;
 
-//        $user->title = Input::get('name');
-//        if(Input::hasFile('image')){
-//            $file=Input::file('image');
-//            $file->move(public_path().'/', $file->getClientOriginalName());
-//
-//            $user->name = $file->getClientOriginalName();
-//            $user->size = $file->getClientsize();
-//            $user->type = $file->getClientMimeType();
-//        }
-//
-//        $user->save();
-//
-//        return redirect('articles.index');
+        $user->title = Input::get('name');
+        if(Input::hasFile('image')){
+            $file=Input::file('image');
+            $file->move(public_path().'/', $file->getClientOriginalName());
+
+            $user->name = $file->getClientOriginalName();
+            $user->size = $file->getClientsize();
+            $user->type = $file->getClientMimeType();
+        }
+
+        $user->save();
+
+        return redirect('articles.index');
     }
 
     /**

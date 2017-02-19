@@ -73,7 +73,9 @@
 
                                     <li>
                                         {{--<a href="{{ route('showall') }}">Voir toutes les images</a>--}}
+                                        {{--<a href="{{ route('contact.index') }}">Contact</a>--}}
                                     </li>
+
 
                                     <li>
                                         <a href="{{ route('logout') }}"
